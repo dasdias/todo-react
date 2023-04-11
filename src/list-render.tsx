@@ -26,7 +26,16 @@ export function TodoList(props: PropsType) {
 			<input type="text" value={taskName} onChange={(e) => { getTaskName(e.target.value) }} />
 			<button>+</button>
 			<ul>
-				<li>List 1</li>
+				{
+					props.tasks.map((task) => {
+						return (
+							<li>{task.title}
+								<button>Delete</button>
+							</li>
+						)
+					})
+				}
+
 				<li>List 2</li>
 			</ul>
 			<button>All</button>
