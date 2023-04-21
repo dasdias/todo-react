@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuid } from 'uuid';
 
 type TaskType = {
 	id: string
@@ -29,7 +30,7 @@ export function TodoList(props: PropsType) {
 				{
 					props.tasks.map((task) => {
 						return (
-							<li>{task.title}
+							<li key={uuid()}>{task.title}
 								<button>Delete</button>
 							</li>
 						)
